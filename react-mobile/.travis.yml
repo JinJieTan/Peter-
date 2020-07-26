@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - "12"
+services:
+  - docker
+
+before_install:
+  - npm install
+
+script:
+  - npm run build
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker build -t jinjietan/react-webpack:latest .
+  - docker push jinjietan/react-webpack:latest

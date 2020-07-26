@@ -1,0 +1,23 @@
+{
+  "name": "peter-redis",
+  "version": "1.0.0",
+  "description": "Peter写的redis",
+  "main": "index.js",
+  "author": "Peter",
+  "license": "MIT",
+  "dependencies": {
+    "@commitlint/cli": "^9.0.1",
+    "@commitlint/config-conventional": "^9.0.1",
+    "husky": "^4.2.5",
+    "node-uuid": "^1.4.8",
+    "protobufjs": "^6.9.0"
+  },
+  "devDependencies": {
+    "express": "^4.17.1"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}

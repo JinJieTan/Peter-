@@ -1,0 +1,29 @@
+{
+  "name": "chunchao",
+  "version": "1.0.1",
+  "description": "微前端框架",
+  "main": "src/index.js",
+  "repository": "https://github.com/JinJieTan",
+  "author": "Peter 谭金杰",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "express": "^4.17.1",
+    "parcel": "^2.0.0-alpha.3.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "scripts": {
+    "startSubApp1": "node ./example/server/subapp1.js",
+    "startSubApp2": "node ./example/server/subapp2.js",
+    "start-main": "parcel index.html"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/plugin-transform-runtime": "^7.10.1",
+    "chunchao": "1.0.1"
+  },
+  "files": [
+    "src"
+  ]
+}

@@ -1,0 +1,76 @@
+1.使静态资源服务器支持命令行启动
+    node app.js --port 3000 --host 127.0.0.1
+    app.js是静态资源服务器的代码入口，我们需要在app.js外再包一层start.js文件，以支持命令行参数的读取。
+    此时我们需要将app.js实例化（将app.js定义成一个模块 往外暴露class）
+    将start.js中的读到关于命令行参数的对象与app.js中原有的配置对象进行合并
+
+2.组装成命令行工具
+        可执行脚本
+            新建一个无后缀的脚本  脚本中编写node程序  然后使用node启动
+
+        如何组装成命令行工具
+            1.新建一个无后缀的脚本  编写如下代码
+                        #!/usr/bin/env node
+                        node代码
+            2.在package.json中注入bin字段
+                { "bin" : { "damu" : "启动文件" } }
+            3.发布
+                 1.npm login (在具有package.json文件的目录下执行当前命令)～
+                 2.npm publish（发布的时候一定要切回国外的镜像）
+                     npm config set registry https://registry.npmjs.org/
+                     npm config set registry https://registry.npm.taobao.org/
+                 3.注意package.json中的 "main"字段 一定要指定到 源码入口
+            4.安装
+                当你全局安装包，npm会从启动文件创建一个到/usr/local/bin/myapp的符号链接
+                                                (这使你可以直接在命令行执行myapp)。
+                如果是本地安装，会链接到./node_modules/.bin/。
+
+3.自动打开网页
+        process.platform
+            process.platform属性返回字符串，标识Node.js进程运行其上的操作系统平台。
+                'darwin'  : mac
+                'win32'
+                'linux'
+
+        使用node的child_process模块
+            child_process.exec(command)
+                command <string> 运行的命令，参数使用空格分隔
+                    win32:
+                        打开网页的命令：start http://www.baidu.com （mac为open）
+                        指定浏览器打开网页的命令：start chrome  http://www.baidu.com
+
+4.移除发布
+    npm unpublish --force
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

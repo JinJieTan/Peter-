@@ -1,0 +1,101 @@
+.shopcart-container {
+    width: 100%;
+    height: 100%;
+
+    .shopcart-content {
+        width: 100%;
+
+        .pushPay {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            
+            .price {
+                width: 100%;
+                
+                .shop-oldPrice {
+                    width: 50%;
+                    color: grey;
+                    text-decoration: line-through;
+                }
+
+                .shop-newPrice {
+                    color: red;
+                    font-size: 1.1rem;
+                }
+            }
+            .am-button{
+                width: 50%;
+            }
+
+        }
+
+        .shop-item {
+            width: 100%;
+            height: 6rem;
+
+
+            img {
+                width: 30%;
+            }
+
+            .shop-text {
+                flex: 1;
+
+                span {
+                    margin: .2rem;
+                }
+
+                .shop-desc {
+                    color: grey;
+                }
+
+                .shop-adress {
+                    color: goldenrod;
+                }
+
+                .shop-oldPrice {
+                    color: grey;
+                    text-decoration: line-through;
+                }
+
+                .shop-newPrice {
+                    color: red;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+}
+
+.shop-items {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.shop-items:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 1px;
+    width: 100%;
+    background-color: grey;
+    transform-origin: 50% 0%;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:2) {
+    .shop-items:after {
+        transform: scaleY(0.5);
+    }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:3) {
+    .shop-items:after {
+        transform: scaleY(0.33);
+    }
+}

@@ -1,0 +1,54 @@
+package message;
+syntax = "proto3";
+
+//心跳包
+message PingPong {
+    string message_type = 1; // 会变成 messageType
+    string ping = 2; 
+    string pong = 3; 
+}
+
+message Common {
+    string message_type = 1; 
+    // string length =2;
+}
+
+
+message Query {
+    string message_type = 1; 
+    string key = 2;
+}
+
+message setSucceed {
+    string message_type = 1;  
+    string uuid = 2;
+}
+
+message getSucceed {
+    required string message_type = 1;  
+    required string uuid = 2;
+    required string data = 3;
+}
+
+
+message Data {
+    string message_type = 1; // 会变成 messageType
+    string uuid = 2;
+    Payload data = 3;
+}
+
+
+message Payload {
+    required string key = 1;
+    required string value =2;
+}
+
+
+Data ={
+    message_type :"1",
+    uuid:'xxx-11',
+    data:{
+        key:"1",
+        value:"2"
+    }
+}

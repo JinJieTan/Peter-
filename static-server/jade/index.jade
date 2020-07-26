@@ -1,0 +1,30 @@
+    
+doctype html 
+html 
+    link(rel="stylesheet",href="https://cdn.bootcss.com/material-design-icons/3.0.1/iconfont/material-icons.min.css")
+    meta(charset="utf-8")
+    style. 
+        li{list-style:none;font-size:18px;display:flex;justify-content:left;align-items:center}        
+    body 
+    ul   <!--把这个data换成你们jade.renderFile传入的那个stat值就OK了-->
+        each item in data 
+            li
+                i.material-icons
+                a(href="#{urlPath}/#{item}")= item 
+                
+         br
+    script. 
+        const iArr = document.querySelectorAll('i')
+        const linkArr = document.querySelectorAll('a')
+        for(let i=0;i<linkArr.length;i++){
+            const result = linkArr[i].innerHTML.split('.').pop()
+            if(result==="html"){
+                iArr[i].innerHTML="format_color_text"
+            }else if(result==="txt"||result==="json"){
+                iArr[i].innerHTML="title"
+            }else{
+                iArr[i].innerHTML="folder_open"
+            }
+        }
+        
+

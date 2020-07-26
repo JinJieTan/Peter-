@@ -1,0 +1,14 @@
+{
+  "name": "servertanjinjie",
+  "version": "1.0.2",
+  "main": "app.js",
+  "license": "MIT",
+  "dependencies": {
+    "etag": "^1.8.1",
+    "jade": "^1.11.0",
+    "yargs": "^13.2.2"
+  },
+  "bin": {
+    "damu": "./bin/damu"
+  }
+}

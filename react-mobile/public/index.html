@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="dns-prefetch" href='http://192.168.48.140'>
+  <link rel="dns-prefetch" href='http://192.168.48.140:8080'>
+  <title>Document</title>
+  <link href="https://cdn.bootcss.com/material-design-icons/3.0.1/iconfont/material-icons.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="root"></div>
+</body>
+<script>
+  window.onload = function () {
+    var stylenode = document.createElement('style');
+    var w = document.documentElement.clientWidth / 16;
+    stylenode.innerHTML = "html{font-size:" + w + "px !important}";
+    document.body.appendChild(stylenode);
+  }
+  
+  // if ('serviceWorker' in navigator) {
+  //   window.addEventListener('load', () => {
+  //     navigator.serviceWorker.register('/service-worker.js').then((registration) => {
+  //       console.log('SW registered: ', registration);
+  //     }).catch((registrationError) => {
+  //       console.log('SW registration failed: ', registrationError);
+  //     });
+  //   });
+  // }
+</script>
+
+</html>
