@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body></body>
+    <script>
+        function LinkedList() {
+            // Node辅助类，表示要加入列表的项，element是即将添加到列表的值，next是指向列表中下一个节点项的指针
+            let Node = function(element) {
+                this.element = element;
+                this.next = null;
+            };
+
+            let length = 0;
+            let head = null;
+
+            // 向链表尾部追加元素
+            this.append = function(element) {
+                let node = new Node(element);
+                let current;
+                if (head === null) {
+                    // 列表中第一个节点
+                    head = node;
+                } else {
+                    current = head;
+                    while (current.next) {
+                        current = current.next; // 找到最后一项，是null
+                    }
+                    current.next = node; // 给最后一项赋值
+                }
+                length++; // 更新列表的长度
+            };
+
+            // 从链表中移除指定位置元素
+            this.removeAt = function(position) {
+                if (position > -1 && position < length) {
+                    // 值没有越界
+                    let current = head;
+                    let previous,
+                        index = 0;
+                    if (position === 0) {
+                        //  移除第一项
+                        head = current.next;
+                    } else {
+                        while (index++ < position) {
+                            previous = current;
+                            current = current.next;
+                        }
+                        previous.next = current.next; // 将previous与current的下一项连接起来，跳过current，从而移除
+                    }
+                    length--; // 更新列表的长度
+                    return current.element;
+                } else {
+                    return null;
+                }
+            };
+
+            // 在链表任意位置插入一个元素
+            this.insert = function(position, element) {
+                if (position >= 0 && position <= length) {
+                    // 检查越界值
+                    let node = new Node(element),
+                        current = head,
+                        previous,
+                        index = 0;
+                    if (position === 0) {
+                        // 在第一个位置添加
+                        node.next = current;
+                        head = node;
+                    } else {
+                        while (index++ < position) {
+                            previous = current;
+                            current = current.next;
+                        }
+                        node.next = current; // 在previous与current的下一项之间插入node
+                        previous.next = node;
+                    }
+                    length++;
+                    return true;
+                } else {
+                    return false;
+                }
+            };
+
+            // 把链表内的值转换成一个字符串
+            this.toString = function() {
+                let current = head,
+                    string = '';
+                while (current) {
+                    string += current.element + ' ';
+                    current = current.next;
+                }
+                return string;
+            };
+
+            // 在链表中查找元素并返回索引值
+            this.indexOf = function(element) {
+                let current = head,
+                    index = 0;
+                while (current) {
+                    if (element === current.element) {
+                        return index;
+                    }
+                    index++;
+                    current = current.next;
+                }
+                return -1;
+            };
+
+            // 从链表中移除指定元素
+            this.remove = function(element) {
+                let index = this.indexOf(element);
+                return this.removeAt(index);
+            };
+
+            this.isEmpty = function() {
+                return length === 0;
+            };
+
+            this.size = function() {
+                return length;
+            };
+
+            this.getHead = function() {
+                return head;
+            };
+        }
+        class HashTable {
+            constructor() {
+                this.table = []; // 数组形式存储
+            }
+
+            // 散列运算函数，可自定义
+            // 此处时最常见的散列函数 ‘lose lose’
+            static loseloseHashCode(key) {
+                let hash = 0;
+                for (var i = 0; i < key.length; i++) {
+                    hash += key.charCodeAt(i);
+                }
+                //对hash取余，这是为了得到一个比较小的hash值，
+                //但是这里取余的对象又不能太大，要注意
+                return hash % 37;
+            }
+
+            // 修改和增加元素
+            put(key, value) {
+                const position = HashTable.loseloseHashCode(key);
+                console.log(key, '------', position);
+                //如果存在就直接在链表头部
+                if (this.table[position]) {
+                    this.table[position].insert(0, value);
+                } else {
+                    //否则新建一个单链表,作为这个hashTable中key对应的value
+                    const list = new LinkedList();
+                    list.append(value);
+                    this.table[position] = list;
+                }
+            }
+
+            get(key) {
+                return this.table[HashTable.loseloseHashCode(key)];
+            }
+
+            remove(key) {
+                this.table[HashTable.loseloseHashCode(key)] = undefined;
+            }
+        }
+        const hash = new HashTable();
+        const arr = [
+            { 广州: 30 },
+            { 深圳: 28 },
+            { 杭州: 66 },
+            { 郑州: 86 },
+            { 新昌: 03 },
+            { 福州: 66 },
+            { 上海: 22 },
+            { 北京: 27 },
+            { 青岛: 23 },
+            { 深圳: 5 },
+            { 天津: 16 },
+            { 上海: 22 },
+            { 广州: 23 },
+            { 杭州: 37 },
+            { 北京: 13 },
+            { 杭州: 44 },
+            { 上海: 82 },
+            { 深圳: 19 },
+            { 上海: 98 },
+            { 深圳: 99 },
+            { 上海: 44 },
+            { 长沙: 25 },
+            { 北京: 27 },
+            { 济南: 15 },
+            { 北京: 58 },
+            { 厦门: 7 },
+            { 天津: 22 },
+            { 福州: 07 },
+            { 南宁: 5 },
+            { 西安: 55 },
+            { 深圳: 24 },
+            { 杭州: 24 },
+            { 北京: 27 },
+            { 北京: 7 },
+            { 上海: 18 },
+            { 北京: 27 },
+            { 北京: 28 },
+            { 南京: 19 },
+            { 深圳: 99 },
+            { 深圳: 18 },
+            { 广州: 66 },
+            { 北京: 25 },
+            { 深圳: 38 },
+            { 北京: 92 },
+            { 成都: 77 },
+            { 广州: 51 },
+            { 北京: 94 },
+            { 潍坊: 03 },
+            { 北京: 36 },
+            { 深圳: 45 },
+            { 杭州: 0 },
+            { 南京: 3 },
+            { 北京: 77 },
+            { 海口: 88 },
+            { 北京: 27 },
+            { 北京: 77 },
+            { 西安: 3 },
+            { 重庆: 77 },
+            { 上海: 23 },
+            { 成都: 88 },
+            { 深圳: 66 },
+            { 广州: 6 },
+            { 深圳: 37 },
+            { 北京: 23 },
+            { 北京: 77 },
+            { 广州: 7 },
+            { 北京: 77 },
+            { 南京: 98 },
+            { 深圳: 88 },
+            { 深圳: 97 },
+            { 北京: 57 },
+            { 泉州: 18 },
+            { 广州: 16 },
+            { 深圳: 11 },
+            { 武汉: 28 },
+            { 无锡: 24 },
+            { 广州: 19 },
+            { 深圳: 13 },
+            { 北京: 1 },
+            { 北京: 66 },
+            { 武汉: 44 },
+            { 西安: 99 },
+            { 郑州: 7 },
+            { 北京: 27 },
+            { 北京: 9 },
+            { 北京: 17 },
+            { 北京: 11 },
+            { 深圳: 99 },
+            { 郑州: 8 },
+            { 北京: 13 },
+            { 北京: 68 },
+            { 北京: 23 },
+            { 合肥: 29 },
+            { 北京: 7 },
+            { 成都: 23 },
+            { 上海: 24 },
+            { 深圳: 26 },
+            { 重庆: 21 },
+            { 广州: 88 },
+            { 深圳: 11 },
+            { 广州: 13 },
+            { 中山: 21 },
+        ];
+        arr.forEach(item => {
+            hash.put(Object.keys(item)[0], item[Object.keys(item)[0]]);
+        });
+        // console.log(hash.get('深圳').getHead(), hash.get('深圳').size());
+
+        getGoodLuck = function(num) {
+            const data = [];
+            hash.table.forEach((list, index) => {
+                let count = 0;
+                let item = list.getHead();
+                for (let i = 0; i < list.size(); i++) {
+                    count++;
+                    count === num && data.push({ item, index });
+                    item = item.next;
+                }
+            });
+            return data;
+        };
+        console.log(getGoodLuck(7));
+        console.log(hash.table, 'table');
+        console.log(getGoodLuck(6), 6);
+        console.log(getGoodLuck(9), 9);
+    </script>
+</html>
