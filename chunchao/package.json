@@ -7,7 +7,7 @@
   "author": "Peter 谭金杰",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "express": "^4.17.1",
     "parcel": "^2.0.0-alpha.3.2",
     "react": "^16.13.1",
