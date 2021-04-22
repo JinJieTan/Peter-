@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>bpmn-js seed</title>
+
+  <style type="text/css">
+    html, body, #canvas {
+      height: 100%;
+      padding: 0;
+    }
+
+    #save-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+
+      border: solid 5px green;
+    }
+  </style>
+  <link rel="stylesheet" href="bower_components/bpmn-js/dist/assets/diagram-js.css">
+  <link rel="stylesheet" href="bower_components/bpmn-js/dist/assets/bpmn-font/css/bpmn-embedded.css">
+</head>
+<body>
+  <!-- element to draw bpmn diagram in -->
+  <div id="canvas"></div>
+
+  <button id="save-button">Save Diagram</button>
+
+  <!-- scripts -->
+
+  <!-- bpmn-js modeler -->
+  <script src="bower_components/bpmn-js/dist/bpmn-modeler.min.js"></script>
+
+  <!-- application -->
+  <script src="modeler.js"></script>
+</body>
+</html>

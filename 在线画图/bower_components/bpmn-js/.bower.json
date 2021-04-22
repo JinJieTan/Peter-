@@ -1,0 +1,29 @@
+{
+  "name": "bpmn-js",
+  "version": "0.17.0",
+  "authors": [
+    "bpmn.io"
+  ],
+  "description": "A BPMN 2.0 renderer and web modeler",
+  "main": "dist/bpmn-viewer.js",
+  "keywords": [
+    "models",
+    "diagram",
+    "renderer",
+    "modeler",
+    "bpmn"
+  ],
+  "ignore": [
+    "test/*"
+  ],
+  "homepage": "http://bpmn.io",
+  "_release": "0.17.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.17.0",
+    "commit": "4aa48f6b40a5f0f7df6b951fdf1d857b5d4abed6"
+  },
+  "_source": "https://github.com/bpmn-io/bower-bpmn-js.git",
+  "_target": "^0.17.0",
+  "_originalSource": "bpmn-js"
+}

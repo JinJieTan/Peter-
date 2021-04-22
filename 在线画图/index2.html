@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <style type="text/css">
+    html, body, #canvas {
+      height: 100%;
+      padding: 0;
+    }
+
+    .diagram-note {
+      background-color: rgba(66, 180, 21, 0.7);
+      color: White;
+      border-radius: 5px;
+      font-family: Arial;
+      font-size: 12px;
+      padding: 5px;
+      min-height: 16px;
+      width: 50px;
+      text-align: center;
+    }
+
+    .needs-discussion:not(.djs-connection) .djs-visual > :nth-child(1) {
+      stroke: rgba(66, 180, 21, 0.7) !important; /* color elements as red */
+    }
+  </style>
+
+  <title>bpmn-js seed</title>
+</head>
+<body>
+  <!-- element to draw bpmn diagram in -->
+  <div id="canvas"></div>
+
+  <!-- scripts -->
+
+  <!-- bpmn-js viewer -->
+  <script src="bower_components/bpmn-js/dist/bpmn-viewer.min.js"></script>
+
+  <!-- application -->
+  <script src="index.js"></script>
+</body>
+</html>
