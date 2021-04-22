@@ -10,7 +10,7 @@
 
 ### 里面包含
 
-- <a href="https://github.com/JinJieTan/Peter-/tree/master/mini-react">手写 react</a>
+- <a href="https://github.com/JinJieTan/Peter-/tree/master/mini-React">手写 react</a>
 - <a href="https://github.com/JinJieTan/Peter-/tree/master/express">手写`express`框架</a>
 - <a href="https://github.com/JinJieTan/Peter-/tree/master/MyRedux">手写静态资源服务器 - 基于`Node.js`</a>
 - <a href="https://github.com/JinJieTan/Peter-/tree/master/mini-webpack">手写 webpack</a>
