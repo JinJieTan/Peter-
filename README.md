@@ -5,7 +5,7 @@
 - 架构设计过桌面端软件，对标`Telegram`，20 万人超级群，端到端加密
 - 擅长`electron`和`react`、原生`node.js`,极限场景下的性能优化
 - 希望能跟大家共同进步 让想学习的人能有更好的发展空间
-- 我的前端资源网站`https://qianduan.life`
+- 我的前端资源网站`https://china-dev.cn`
 - 我的个人微信号：`CALASFxiaotan` 微信公众号：【前端巅峰】 思否社区:`Peter 谭金杰`
 
 ### 里面包含
