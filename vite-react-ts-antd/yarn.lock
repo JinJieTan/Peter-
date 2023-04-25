@@ -465,12 +465,12 @@ async-validator@^3.0.3:
   resolved "https://registry.npm.taobao.org/async-validator/download/async-validator-3.5.1.tgz#cd62b9688b2465f48420e27adb47760ab1b5559f"
   integrity sha1-zWK5aIskZfSEIOJ620d2CrG1VZ8=
 
-axios@^0.21.1:
-  version "0.21.1"
-  resolved "https://registry.npm.taobao.org/axios/download/axios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"
-  integrity sha1-IlY0gZYvTWvemnbVFu8OXTwJsrg=
+axios@^0.21.2:
+  version "0.21.2"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.2.tgz#21297d5084b2aeeb422f5d38e7be4fbb82239017"
+  integrity sha512-87otirqUw3e8CzHTMO+/9kh/FSgXt/eVDvipijwDtEuwbkySWZ9SBm6VEubmJ/kLKEoLQV/POhxXFb66bfekfg==
   dependencies:
-    follow-redirects "^1.10.0"
+    follow-redirects "^1.14.0"
 
 balanced-match@^1.0.0:
   version "1.0.2"
@@ -722,10 +722,10 @@ flatten@^1.0.2:
   resolved "https://registry.npm.taobao.org/flatten/download/flatten-1.0.3.tgz#c1283ac9f27b368abc1e36d1ff7b04501a30356b"
   integrity sha1-wSg6yfJ7Noq8HjbR/3sEUBowNWs=
 
-follow-redirects@^1.10.0:
-  version "1.13.3"
-  resolved "https://registry.npm.taobao.org/follow-redirects/download/follow-redirects-1.13.3.tgz#e5598ad50174c1bc4e872301e82ac2cd97f90267"
-  integrity sha1-5VmK1QF0wbxOhyMB6CrCzZf5Amc=
+follow-redirects@^1.14.0:
+  version "1.15.0"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.15.0.tgz#06441868281c86d0dda4ad8bdaead2d02dca89d4"
+  integrity sha512-aExlJShTV4qOUOL7yF1U5tvLCB0xQuudbf6toyYA0E/acBNw71mvjFTnLaRp50aQaYocMR0a/RMMBIHeZnGyjQ==
 
 fs.realpath@^1.0.0:
   version "1.0.0"
